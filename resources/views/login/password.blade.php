@@ -14,7 +14,7 @@
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="card-title">Register</h1>
+                    <h1 class="card-title">Forgot Password</h1>
                 </div>
                 <div class="card-body">
                     @if ($errors->any())
@@ -34,7 +34,7 @@
                             {{ Session::get('error') }}
                         </div>
                     @endif
-                    <form action="{{ route('forgotpassword') }}" method="POST">
+                    <form action="{{ route('passreset') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="mb-3">
                             <div class="d-grid">
-                                <button class="btn btn-primary">Register</button>
+                                <button class="btn btn-primary">Change Password</button>
                             </div>
                         </div>
                     </form>

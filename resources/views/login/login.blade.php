@@ -42,6 +42,12 @@
                                     <button class="btn btn-primary">Login</button>
                                 </div>
                             </div>
+                            <div class="mt-3">
+                                <div class="d-grid">
+                                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="/register">Register Admin</a></p>
+                                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="/forgotpassword">Forgot Password?</a></p>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

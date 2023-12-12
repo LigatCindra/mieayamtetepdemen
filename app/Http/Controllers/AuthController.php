@@ -9,18 +9,20 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function login(){
+    public function login()
+    {
         return view('login/login');
     }
 
 
-    public function loginPost(Request $request){
+    public function loginPost(Request $request)
+    {
         $credentials = $request->validate([
             'name' => 'required',
             'password' => 'required'
         ]);
 
-        if(auth()->attempt($credentials)){
+        if (auth()->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/admin')->with('success', 'Login Berhasil');
         }
@@ -28,7 +30,8 @@ class AuthController extends Controller
         return back()->with('error', 'Username atau Password salah');
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
 
         request()->session()->invalidate();
@@ -43,7 +46,8 @@ class AuthController extends Controller
         return view('login/register');
     }
 
-    public function registerPost(){
+    public function registerPost()
+    {
         request()->validate([
             'name' => 'required|unique:users',
             'password' => 'required',
@@ -63,35 +67,35 @@ class AuthController extends Controller
         ]);
 
         return back()->with('success', 'Akun admin terbaru telah dibuat');
-
     }
 
-    public function forgotpassword(){
+    public function forgotpassword()
+    {
         return view('login/password');
     }
 
 
-    public function forgotpasswordPost(){
+    public function forgotpasswordPost()
+    {
+        
         request()->validate([
             'name' => 'required',
-            'password' => 'required',
-            'newpassword_verify' => 'required', 
+            'newpassword' => 'required',
+            'newpassword_verify' => 'required',
         ]);
-
-        $forgotten_user = User::where('username', request('name'))->first();
-        $inputpassword = request()->input('password');
-        $verifypassword = request()->input('newpassword_verify');
-
-        if (!password_verify($inputpassword, $verifypassword)) {
+        
+        $forgotten_user = User::where('name', request('name'))->first();
+        $inputpassword = trim(request()->input('newpassword'));
+        $verifypassword = trim(request()->input('newpassword_verify'));
+        
+        if ($inputpassword !== $verifypassword) {
             return back()->with('error', 'Password verification failed');
         }
 
+        
         $forgotten_user->password = Hash::make($inputpassword);
         $forgotten_user->save();
 
         return back()->with('success', 'Password berhasil diganti');
-
     }
-
-
 }
