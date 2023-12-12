@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+    background-color: #f1c27b;
+}
+
+
+
+.navbar-menu {
+    background-color: #e25e3e;
+    /* Background color of the navigation bar */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-menu nav {
+    margin-left: auto;
+    /* Push the menu link to the left */
+}
+
+.navbar-menu a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.homeheader {
+    position: relative;
+    text-align: center;
+}
+
+.homeheader .overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 98.7%;
+    /* Adjust this value to cover the entire image */
+    background: rgba(253, 167, 105, 0.8);
+    /* Adjust the background color and transparency */
+}
+
+
+.homeheader img {
+    width: 100%;
+    height: auto;
+
+}
+
+.homeheader p {
+    position: absolute;
+    top: 40%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3.5rem;
+    font-family: 'Lilita One';
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.profil {
+    text-align: center;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.profil h2 {
+    font-family: 'Lilita One';
+    text-align: center;
+    font-size: 5rem;
+    padding-top: 150px;
+}
+
+.profil .imgandtext img {
+    margin-left: 100px;
+    float: left;
+}
+
+.profil .imgandtext p {
+    padding-top: 100px;
+    padding-left: 50px;
+    display: flex;
+    font-size: 50px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 70px;
+    font-family: 'Inter';
+}
+
+.menuteaser .menubutton{
+    width: 647px;
+    height: 176px;
+    border-radius: 100px;
+    background: #FDA769;
+    cursor: pointer;
+}
+
+.menuteaser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuteaser .menubutton a {
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Lilita One';
+    color: black;
+    text-decoration: none;
+    display: block; /* Add this property to make the text centered */
+    margin: 65px;
+}
+
+.menu-images {
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin-top as needed */
+}
+
+.mieayam,
+.pangsit {
+    display: block; /* Make the images block elements */
+    width: 350px; /* Adjust the width as needed */
+    height: auto;
+    margin: 10px auto; /* Adjust the margin as needed */
+}
+
+.mieayam {
+    margin-top: 80px;
+    margin-right: 230px;
+    padding-bottom: 100px;
+}
+
+.pangsit {
+    margin-left: 230px; /* Float the pangsit image to the right */
+    padding-bottom: 50px;
+}
+
+.pesanan {
+    width: 100%;
+    height: 610px;
+    background: #FDA769;  
+}
+
+.pesanan p{
+    font-family: 'Lilita One';
+    text-align: center;
+    font-size: 5rem;
+    padding-top: 150px;
+}
+
+.pesanan .pesanbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 579px;
+    height: 112px;
+    border-radius: 100px;
+    background: #050505;
+    cursor: pointer;
+    margin: 0 auto; /* Center the button horizontally */
+    margin-top: 150px;
+}
+
+.pesanan .pesanbutton a{
+    font-size: 3.5rem;
+    font-family: 'Lilita One';
+    color: white;
+    text-decoration: none;
+    
+}
+
+.footer {
+    width: 100%;
+    height: 363px;
+    background: #C63D2F;
+    text-align: left;
+    
+}
+
+
+.footer p {
+    
+    margin: 0;
+    font-family: 'Inter';
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 25px;
+    padding-top: 25px;
+}

@@ -1,0 +1,357 @@
+.homepage-guest-child,
+.homepage-guest-item {
+  position: absolute;
+  top: 712.5px;
+  left: -279px;
+  background-color: #c63d2f;
+  width: 388.2px;
+  height: 388.21px;
+  transform: rotate(-45deg);
+  transform-origin: 0 0;
+}
+.homepage-guest-item {
+  left: 1250px;
+}
+.homepage-guest-inner {
+  position: absolute;
+  top: 3321px;
+  left: 0;
+  background-color: #fda769;
+  width: 100%;
+  height: 610px;
+}
+.login-untuk-memesan,
+.mie-ayam-kita {
+  position: absolute;
+  top: 3431px;
+  left: 300px;
+}
+.mie-ayam-kita {
+  top: 1152px;
+  left: 828px;
+  font-size: 36px;
+  line-height: 200%;
+  font-family: Inter;
+  display: flex;
+  align-items: center;
+  width: 508px;
+  height: 269px;
+}
+.rectangle-div {
+  position: absolute;
+  top: 3667px;
+  left: 431px;
+  border-radius: 100px;
+  background-color: #393939;
+  width: 579px;
+  height: 112px;
+  cursor: pointer;
+}
+.login-disini {
+  position: absolute;
+  top: 3688px;
+  left: 554px;
+  color: #fff;
+  display: inline-block;
+}
+.homepage-guest-child1 {
+  position: absolute;
+  top: 4043px;
+  left: 1px;
+  background-color: #c63d2f;
+  width: 100%;
+  height: 363px;
+}
+.pt-asihdiashdjkahskjd {
+  margin: 0;
+}
+.pt-asihdiashdjkahskjd-alamat-container1 {
+  line-break: anywhere;
+  width: 100%;
+}
+.pt-asihdiashdjkahskjd-alamat-container {
+  position: absolute;
+  top: 3986px;
+  left: 92px;
+  font-size: 36px;
+  font-family: Inter;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 508px;
+  height: 269px;
+}
+.homepage-guest-child2 {
+  position: absolute;
+  top: 4198px;
+  left: 92px;
+  background-color: #d9d9d9;
+  width: 319px;
+  height: 169px;
+}
+.g-maps {
+  position: absolute;
+  top: 4246px;
+  left: 161px;
+  font-family: Lalezar;
+}
+.profil-kami {
+  position: absolute;
+  top: 827px;
+  left: 490px;
+  font-size: 96px;
+}
+.group-child,
+.group-item {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  background-color: #d9d9d9;
+  width: 1440px;
+  height: 390px;
+}
+.group-item {
+  left: 687px;
+  background-color: #c63d2f;
+  width: 114px;
+}
+.group-child1,
+.group-child2,
+.group-child3,
+.group-child4,
+.group-child5,
+.group-inner {
+  position: absolute;
+  top: 0;
+  left: 916px;
+  background-color: #c63d2f;
+  width: 114px;
+  height: 390px;
+}
+.group-child1,
+.group-child2,
+.group-child3,
+.group-child4,
+.group-child5 {
+  left: 1145px;
+}
+.group-child2,
+.group-child3,
+.group-child4,
+.group-child5 {
+  left: 1374px;
+}
+.group-child3,
+.group-child4,
+.group-child5 {
+  left: 458px;
+}
+.group-child4,
+.group-child5 {
+  left: 229px;
+}
+.group-child5 {
+  left: 0;
+}
+.group-child6,
+.rectangle-parent {
+  position: absolute;
+  top: 1626px;
+  left: -24px;
+  width: 1488px;
+  height: 390px;
+}
+.group-child6 {
+  top: 711.85px;
+  left: 6.97px;
+  background-color: transparent;
+  width: 1433.03px;
+  height: 283.15px;
+}
+
+.group-child2{
+  width: 100%;
+}
+.img-0428-1-icon {
+  position: absolute;
+  top: calc(50% - 497.5px);
+  left: calc(50% - 730px);
+  width: 1550px;
+  height: 710px;
+  object-fit: cover;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 890.67px;
+  background-color: rgba(255, 155, 80, 0.8);
+  width: 620px;
+  height: 710.86px;
+}
+.rectangle-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 995px;
+}
+.homepage-guest-child3 {
+  position: absolute;
+  top: 2178px;
+  left: 371px;
+  border-radius: 100px;
+  background-color: #fda769;
+  width: 687px;
+  height: 196px;
+  cursor: pointer;
+}
+.menu,
+.profile-title {
+  position: absolute;
+  text-align: center;
+}
+.menu {
+  top: 2221px;
+  left: 596px;
+  font-size: 96px;
+}
+.profile-title {
+  top: 292px;
+  left: 981px;
+  color: #fff;
+  display: inline-block;
+  width: 367px;
+  height: 137px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.img-0428-3-icon,
+.menu-mie-ayam-5,
+.tekwan-ayam-5 {
+  position: absolute;
+  top: 1046px;
+  left: 181px;
+  width: 436px;
+  height: 436px;
+  object-fit: cover;
+}
+.menu-mie-ayam-5,
+.tekwan-ayam-5 {
+  top: 2429px;
+  left: 131px;
+  width: 479px;
+  height: 388px;
+}
+.tekwan-ayam-5 {
+  top: 2817px;
+  left: 816px;
+  width: 483px;
+  height: 421px;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e25e3e;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 67px;
+  border: none;
+}
+.ellipse-div {
+  position: absolute;
+  top: 8px;
+  left: 19px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  width: 50px;
+  height: 50px;
+}
+.logo {
+  position: absolute;
+  top: 23px;
+  left: 28px;
+  font-size: 13px;
+  font-family: Lalezar;
+  text-align: center;
+  display: inline-block;
+  width: 32px;
+  height: 21px;
+}
+.about-us-button-child,
+.background1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e25e3e;
+  width: 552px;
+  height: 67px;
+}
+.about-us-button-child {
+  border-radius: 15px;
+  background-color: #ffbb5c;
+  width: 151px;
+  height: 42px;
+}
+.about-us {
+  position: absolute;
+  top: 7px;
+  left: 18px;
+  display: inline-block;
+  width: 115px;
+  -webkit-text-stroke: 1px #fff;
+}
+.about-us-button {
+  position: absolute;
+  top: 12px;
+  left: 200px;
+  width: 151px;
+  height: 42px;
+  cursor: pointer;
+}
+.login-disini {
+  position: absolute;
+  top: 3688px;
+  left: 554px;
+  color: #fff;
+  display: inline; /* Add this line to make it inline */
+}
+.logout-button,
+.menu-button,
+.navbar-menu {
+  position: absolute;
+  top: 12px;
+  width: 151px;
+  height: 42px;
+  border: none;
+  color:#000;
+}
+.logout-button {
+  left: 375px;
+  cursor: pointer;
+}
+.menu-button,
+.navbar-menu {
+  left: 25px;
+}
+.navbar-menu {
+  top: 0;
+  left: 888px;
+  width: 552px;
+  height: 67px;
+  text-align: center;
+  font-size: 24px;
+  font-family: Inter;
+  border: none;
+  color: #fff;
+}
+.homepage-guest {
+  position: relative;
+  background-color: #f1c27b;
+  width: 100%;
+  height: 4406px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 60px;
+  color: #000;
+  font-family: "Lilita One";
+}
