@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin</title>
-  <a href="#" onclick="logout()">Logout</a>
+  <div class="buttoncontainer ms-3 mt-3 mb-3 me-3">
+                <form action="/logout" method="post" class="m-6">
+                    @csrf
+                    <button type="submit" class="btn btn-primary ">Logout</button>
+                </form>
+            </div>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="path/to/admin.css">
 </head>
@@ -91,11 +96,5 @@
       </div>
     </div>
   </div>
-  <script>
-  function logout() {
-    event.preventDefault();
-    document.getElementById('logout-form').submit();
-    window.location.href = "{{ route('index') }}";
-  }
-</script>
+
   <script src
