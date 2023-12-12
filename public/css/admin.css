@@ -1,0 +1,16 @@
+.form-control {
+    margin-bottom: 10px;
+  }
+
+.btn-primary {
+    margin-top: 10px;
+  }
+  
+.table {
+    margin-top: 10px;
+  }
+
+img {
+    max-width: 100%;
+    height: auto;
+  }
