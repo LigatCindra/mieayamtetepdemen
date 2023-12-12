@@ -8,13 +8,13 @@
              @csrf
             <button type="submit" class="btn btn-primary ">Logout</button>
         </form>
-  </div>
+ </div>
   <title>Admin</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="path/to/admin.css"> <!-- Include your admin-specific styles here -->
+  <link rel="stylesheet" href="path/to/admin.css">
   <style>
     body {
-      background-color: #FFDAB9; /* Peach-Orange background color */
+      background-color: #FFDAB9;
     }
   </style>
 </head>
@@ -22,7 +22,7 @@
 
 <div class="container-fluid">
   <div class="row min-vh-100 bg-light">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-md-6 order-md-2">
       <div class="container mt-3">
         <h1 class="font-weight-bold">Create Makanan</h1>
         <form method="POST" action="{{ route('makanan.store') }}" enctype="multipart/form-data">
@@ -41,13 +41,13 @@
             <label for="harga">Harga Makanan:</label>
             <input type="number" name="harga" class="form-control" required>
             <input type="file" name="url_gambar" accept="image/png, image/jpeg" class="form-control-file mt-3">
-            <button type="submit" class="btn btn-primary mt-3">Create Makanan</button>
+            <button type="submit" class="btn btn-primary mt-3 btn-block">Create Makanan</button>
           </div>
         </form>
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-6">
+    <div class="col-md-6 order-md-1">
       <div class="container mt-3">
         <table class="table">
           <thead>
@@ -86,13 +86,13 @@
                       <label for="harga">Harga Makanan:</label>
                       <input type="number" name="harga" value="{{ $row->harga }}" class="form-control" required>
                       <input type="file" name="url_gambar" accept="image/png, image/jpeg" class="form-control-file mt-3">
-                      <button type="submit" class="btn btn-primary mt-3">Edit Makanan</button>
+                      <button type="submit" class="btn btn-primary mt-3 btn-block">Edit Makanan</button>
                     </div>
                   </form>
-                  <form style="margin-left:5px;" method="POST" action="{{ route('makanan.destroy', $row->id) }}">
+                  <form style="margin-top: 5px;" method="POST" action="{{ route('makanan.destroy', $row->id) }}">
                     @csrf
                     @method('DELETE')
-                    <button type="delete" class="btn btn-danger mt-3">Delete Makanan</button>
+                    <button type="delete" class="btn btn-danger mt-3 btn-block">Delete Makanan</button>
                   </form>
                 </td>
               </tr>
