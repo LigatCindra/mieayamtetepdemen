@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <div class="buttoncontainer ms-3 mt-3 mb-3 me-3">
-        <form action="/logout" method="post" class="m-6">
-             @csrf
-            <button type="submit" class="btn btn-primary ">Logout</button>
-        </form>
+    <form action="/logout" method="post" class="m-6">
+         @csrf
+        <button type="submit" class="btn btn-primary ">Logout</button>
+    </form>
  </div>
   <title>Admin</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -19,10 +19,14 @@
   </style>
 </head>
 <body class="antialiased">
-
+<style>
+    body {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+</style>
 <div class="container-fluid">
   <div class="row min-vh-100 bg-light">
-    <div class="col-md-6 order-md-2">
+    <div class="col-sm-12 col-md-6">
       <div class="container mt-3">
         <h1 class="font-weight-bold">Create Makanan</h1>
         <form method="POST" action="{{ route('makanan.store') }}" enctype="multipart/form-data">
@@ -41,13 +45,13 @@
             <label for="harga">Harga Makanan:</label>
             <input type="number" name="harga" class="form-control" required>
             <input type="file" name="url_gambar" accept="image/png, image/jpeg" class="form-control-file mt-3">
-            <button type="submit" class="btn btn-primary mt-3 btn-block">Create Makanan</button>
+            <button type="submit" class="btn btn-primary mt-3">Create Makanan</button>
           </div>
         </form>
       </div>
     </div>
 
-    <div class="col-md-6 order-md-1">
+    <div class="col-sm-12 col-md-6">
       <div class="container mt-3">
         <table class="table">
           <thead>
@@ -86,13 +90,13 @@
                       <label for="harga">Harga Makanan:</label>
                       <input type="number" name="harga" value="{{ $row->harga }}" class="form-control" required>
                       <input type="file" name="url_gambar" accept="image/png, image/jpeg" class="form-control-file mt-3">
-                      <button type="submit" class="btn btn-primary mt-3 btn-block">Edit Makanan</button>
+                      <button type="submit" class="btn btn-primary mt-3">Edit Makanan</button>
                     </div>
                   </form>
-                  <form style="margin-top: 5px;" method="POST" action="{{ route('makanan.destroy', $row->id) }}">
+                  <form style="margin-left:5px;" method="POST" action="{{ route('makanan.destroy', $row->id) }}">
                     @csrf
                     @method('DELETE')
-                    <button type="delete" class="btn btn-danger mt-3 btn-block">Delete Makanan</button>
+                    <button type="delete" class="btn btn-danger mt-3">Delete Makanan</button>
                   </form>
                 </td>
               </tr>
