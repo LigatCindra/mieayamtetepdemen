@@ -1,54 +1,16 @@
-/* admin.css */
+.form-control {
+    margin-bottom: 10px;
+  }
 
-.container {
-    background-color: bisque;
-    padding: 10px;
-}
+.btn-primary {
+    margin-top: 10px;
+  }
+  
+.table {
+    margin-top: 10px;
+  }
 
-h1 {
-    font-size: large;
-    font-weight: bold;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.btn {
-    padding: 5px;
-    background-color: blue;
-    color: white;
-    border-radius: 5px;
-}
-
-.lcontainer {
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.normflex {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
+img {
+    max-width: 100%;
+    height: auto;
+  }
