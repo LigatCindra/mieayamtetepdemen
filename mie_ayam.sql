@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2023 at 07:15 AM
+-- Generation Time: Dec 12, 2023 at 05:16 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -66,7 +66,7 @@ CREATE TABLE `makanan` (
   `id` int(11) NOT NULL,
   `id_kategori` int(11) DEFAULT NULL,
   `nama_makanan` varchar(255) DEFAULT NULL,
-  `deskripsi` varchar(255) NOT NULL,
+  `deskripsi` varchar(255) DEFAULT NULL,
   `harga` int(11) DEFAULT NULL,
   `url_gambar` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -76,9 +76,7 @@ CREATE TABLE `makanan` (
 --
 
 INSERT INTO `makanan` (`id`, `id_kategori`, `nama_makanan`, `deskripsi`, `harga`, `url_gambar`) VALUES
-(4, 7, 'Sprite', 'Minum Segar', 7000, 'uploads/6O2dx7haSMgv6A0bbDM3wLjjDwDo2HnThub2G7X7.jpg'),
-(5, 6, 'Mie Ayam Pangsit', 'Enak nih', 20000, 'uploads/OJFKS9pMsZjGsZnaY1UVAnGGP324mAyrYG169Xh7.png'),
-(7, 6, 'pop goes', 'list', 10990, 'uploads/fCViGRUaEvPfOHuSG6pdKRAOdNXAUU9GWOWNENyN.png');
+(4, 7, 'Sprite', 'Minum Segar', 7000, 'uploads/6O2dx7haSMgv6A0bbDM3wLjjDwDo2HnThub2G7X7.jpg');
 
 -- --------------------------------------------------------
 
@@ -174,7 +172,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`) VALUES
-(2, 'admin', '$2y$12$nwF5SFVpZY2PceVTIfdG8OjgXPmUn0TGGQT9bt.fiN2kZ9OG0d/9y');
+(2, 'admin', '$2y$12$nwF5SFVpZY2PceVTIfdG8OjgXPmUn0TGGQT9bt.fiN2kZ9OG0d/9y'),
+(3, 'admin2', '$2y$12$DsJZqTaXCQbLUwHq.pidNe54SSBF/wwwSzF7rwAWatpt21BQbSOki'),
+(4, 'admin3', '$2y$12$FJfV0.QBOlhuSpH9EwrzweDWBL8I9hjW0ITUhhQg71zKeY07z/p6C');
 
 --
 -- Indexes for dumped tables
@@ -235,7 +235,8 @@ ALTER TABLE `personal_access_tokens`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -257,7 +258,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `makanan`
 --
 ALTER TABLE `makanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -275,7 +276,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
