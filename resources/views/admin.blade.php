@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<div class="buttoncontainer ms-3 mt-3 mb-3 me-3">
-    <form action="/logout" method="post" class="m-6">
-        @csrf
-        <button type="submit" class="btn btn-primary ">Logout</button>
-    </form>
-</div>
+  <div class="buttoncontainer ms-3 mt-3 mb-3 me-3">
+        <form action="/logout" method="post" class="m-6">
+             @csrf
+            <button type="submit" class="btn btn-primary ">Logout</button>
+        </form>
+    </div>
   <title>Admin</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="path/to/admin.css">
@@ -20,13 +20,18 @@
     .buttoncontainer {
       margin: 1rem;
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body class="antialiased">
   <div class="container-fluid">
     <div class="row min-vh-100 bg-light">
-      <div class="col-sm-12 col-md-6">
-        <div class="container mt-3">
+      <div class="col-md-6 mt-3">
+        <div class="container">
           <h1 class="font-weight-bold">Create Makanan</h1>
           <form method="POST" action="{{ route('makanan.store') }}" enctype="multipart/form-data">
             @csrf
@@ -49,8 +54,8 @@
           </form>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6">
-        <div class="container mt-3">
+      <div class="col-md-6 mt-3">
+        <div class="container">
           <table class="table">
             <thead>
               <tr>
@@ -69,7 +74,7 @@
                   <td>{{ $row->harga }}</td>
                   <td>{{ $row->kategori->nama_kategori }}</td>
                   <td>{{ $row->deskripsi }}</td>
-                  <td><img style="height:250px; width: 250px;" src="{{ asset('storage/' . $row->url_gambar) }}" /></td>
+                  <td><img src="{{ asset('storage/' . $row->url_gambar) }}" class="img-fluid" alt="{{ $row->nama_makanan }}"></td>
                   <td>
                     <form method="POST" action="{{ route('makanan.edit', $row->id) }}" enctype="multipart/form-data">
                       @csrf
