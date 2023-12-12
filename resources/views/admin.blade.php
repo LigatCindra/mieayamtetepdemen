@@ -21,7 +21,7 @@
 <body class="antialiased">
 <style>
     body {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 </style>
 <div class="container-fluid">
