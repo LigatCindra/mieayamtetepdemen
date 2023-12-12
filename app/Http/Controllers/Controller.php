@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use App\Models\Makanan;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\DB;
+
 
 class Controller extends BaseController
 {
@@ -25,7 +28,7 @@ class Controller extends BaseController
     //     $kategoriData = $request->only(['nama_kategori']);
 
     //     Kategori::create($kategoriData);
-    
+
     //     return redirect('/admin')->with('success', 'Category created successfully.');
     // }
 
@@ -59,15 +62,20 @@ class Controller extends BaseController
     public function storeMakanan(Request $request)
     {
         // Validate the form data, including the image upload
-        // $request->validate([
-        //     'url_gambar' => 'required|image|mimes:jpeg,png|max:2048',
-        //     'nama_makanan' => 'required|string|max:255',
-        //     'harga' => 'required|integer',
-        //     'id_kategori' => 'required|exists:kategori,id_kategori'
-        //     // Other validation rules for other fields
-        // ]);
+        $validator = Validator::make($request->all(), [
+            'url_gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'nama_makanan' => 'required|string|max:255',
+            'harga' => 'required|numeric',
+            'id_kategori' => 'required|integer',
+            'deskripsi' => 'required|string|max:255',
+        ]);
 
-        // return redirect()->route('/')->with('success', 'Category updated successfully.');
+        if ($validator->fails()) {
+            return redirect('/admin')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         // Handle file upload
         $imagePath = $request->file('url_gambar')->store('uploads', 'public');
 
@@ -81,8 +89,7 @@ class Controller extends BaseController
             // Other fields
         ]);
 
-    
-        return redirect('/admin')->with('success', 'Category updated successfully.');
+        return redirect('/admin')->with('success', 'Makanan created successfully.');
     }
 
     public function showMakanan($id)
@@ -94,6 +101,21 @@ class Controller extends BaseController
 
     public function editMakanan(Request $request, $id)
     {
+        // Validate the form data, including the image upload
+        $validator = Validator::make($request->all(), [
+            'url_gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'nama_makanan' => 'required|string|max:255',
+            'harga' => 'required|numeric',
+            'id_kategori' => 'required|integer',
+            'deskripsi' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $makanan = Makanan::findOrFail($id);
 
         $imagePath = $request->file('url_gambar')->store('uploads', 'public');
@@ -103,8 +125,9 @@ class Controller extends BaseController
             'nama_makanan' => $request->input('nama_makanan'),
             'harga' => $request->input('harga'),
             'id_kategori' => $request->input('id_kategori'),
-            'deskripsi ' => $request->input('deskripsi'),
+            'deskripsi' => $request->input('deskripsi'),
         ]);
+
         return redirect('/admin')->with('success', 'Category edited successfully.');
     }
 

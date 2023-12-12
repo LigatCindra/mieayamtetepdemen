@@ -30,6 +30,8 @@ Route::delete('/makanan/{id}/delete', [Controller::class, 'destroyMakanan'])->na
 Route::group(['middleware' => 'guest'], function(){
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     route::post('/login', [AuthController::class, 'loginPost'])->name('login');
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
 });
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
