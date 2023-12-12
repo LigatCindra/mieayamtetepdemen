@@ -28,7 +28,7 @@ class Controller extends BaseController
     //     $kategoriData = $request->only(['nama_kategori']);
 
     //     Kategori::create($kategoriData);
-
+    
     //     return redirect('/admin')->with('success', 'Category created successfully.');
     // }
 
@@ -60,37 +60,31 @@ class Controller extends BaseController
     // }
 
     public function storeMakanan(Request $request)
-    {
-        // Validate the form data, including the image upload
-        $validator = Validator::make($request->all(), [
-            'url_gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
-            'nama_makanan' => 'required|string|max:255',
-            'harga' => 'required|numeric',
-            'id_kategori' => 'required|integer',
-            'deskripsi' => 'required|string|max:255',
-        ]);
+{
+    // Validate the form data, including the image upload
+    $request->validate([
+        'url_gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+        'nama_makanan' => 'required|string|max:255',
+        'harga' => 'required|numeric',
+        'id_kategori' => 'required|integer',
+        'deskripsi' => 'required|string|max:255',
+    ]);
 
-        if ($validator->fails()) {
-            return redirect('/admin')
-                ->withErrors($validator)
-                ->withInput();
-        }
+    // Handle file upload
+    $imagePath = $request->file('url_gambar')->store('uploads', 'public');
 
-        // Handle file upload
-        $imagePath = $request->file('url_gambar')->store('uploads', 'public');
+    // Save the data to the database
+    Makanan::create([
+        'url_gambar' => $imagePath,
+        'nama_makanan' => $request->input('nama_makanan'),
+        'harga' => $request->input('harga'),
+        'id_kategori' => $request->input('id_kategori'),
+        'deskripsi' => $request->input('deskripsi')
+        // Other fields
+    ]);
 
-        // Save the data to the database
-        Makanan::create([
-            'url_gambar' => $imagePath,
-            'nama_makanan' => $request->input('nama_makanan'),
-            'harga' => $request->input('harga'),
-            'id_kategori' => $request->input('id_kategori'),
-            'deskripsi' => $request->input('deskripsi')
-            // Other fields
-        ]);
-
-        return redirect('/admin')->with('success', 'Makanan created successfully.');
-    }
+    return redirect('/admin')->with('success', 'Makanan created successfully.');
+}
 
     public function showMakanan($id)
     {
@@ -101,20 +95,13 @@ class Controller extends BaseController
 
     public function editMakanan(Request $request, $id)
     {
-        // Validate the form data, including the image upload
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'url_gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
-            'nama_makanan' => 'required|string|max:255',
+            'nama_makanan' => 'required|string',
             'harga' => 'required|numeric',
             'id_kategori' => 'required|integer',
-            'deskripsi' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
         ]);
-
-        if ($validator->fails()) {
-            return redirect('/admin')
-                ->withErrors($validator)
-                ->withInput();
-        }
 
         $makanan = Makanan::findOrFail($id);
 

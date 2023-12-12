@@ -45,7 +45,7 @@ class AuthController extends Controller
 
     public function registerPost(){
         request()->validate([
-            'name' => 'required',
+            'name' => 'required|unique:users',
             'password' => 'required',
             'original_admin_password' => 'required', // Add validation for the original admin password
         ]);
@@ -66,7 +66,32 @@ class AuthController extends Controller
 
     }
 
+    public function forgotpassword(){
+        return view('login/password');
+    }
 
+
+    public function forgotpasswordPost(){
+        request()->validate([
+            'name' => 'required',
+            'password' => 'required',
+            'newpassword_verify' => 'required', 
+        ]);
+
+        $forgotten_user = User::where('username', request('name'))->first();
+        $inputpassword = request()->input('password');
+        $verifypassword = request()->input('newpassword_verify');
+
+        if (!password_verify($inputpassword, $verifypassword)) {
+            return back()->with('error', 'Password verification failed');
+        }
+
+        $forgotten_user->password = Hash::make($inputpassword);
+        $forgotten_user->save();
+
+        return back()->with('success', 'Password berhasil diganti');
+
+    }
 
 
 }
