@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Models\Makanan;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,4 +61,9 @@ Route::get('/menu/minuman', function () {
     return view('menu',[
         'makanan' => Makanan::where('id_kategori', 7)->get()
     ]);
+});
+
+//get the storage link
+Route::get('/sym', function () {
+    Artisan::call('storage:link');
 });
