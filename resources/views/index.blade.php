@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar:wght@400&display=swap">
     <title>Mie Ayam Tetep Demen</title>
+    <style src="anim.css"></style>
 </head>
 
 <body>
@@ -25,14 +26,14 @@
             </div>
         </nav>
     </div>
-    <section> {{-- header home --}}
+    <section class="hidden"> {{-- header home --}}
         <div class="homeheader">
             <img src="{{ asset('storage/uploads/IMG_04281.png') }}">
             <div class="overlay"></div>
             <p>Mie Ayam Tetep Demen</p>
         </div>
     </section>
-    <section> {{-- profil home --}}
+    <section class="hidden"> {{-- profil home --}}
         <div class="profil">
             <h2>Profil Kami</h2>
             <div class="imgprofil">
@@ -43,7 +44,7 @@
             </div>
         </div>
     </section>
-    <section> {{-- profil menu --}}
+    <section class="hidden"> {{-- profil menu --}}
         <div class="menuteaser">
             <div class="menubutton" onclick="window.location.href='{{url('/menu/makanan')}}';">
                 <a href="{{url('/menu/makanan')}}">Menu Andalan</a>
@@ -56,7 +57,7 @@
         </div>
         
     </section>
-    <section> {{-- pesan menu --}}
+    <section class="hidden"> {{-- pesan menu --}}
         <div class="pesanan">
             <p>Keburu laper? Langsung pesan aja!</p>
             <div class="pesanbutton">
@@ -82,5 +83,5 @@
         </div>
     </section>
 </body>
-
+<script src="anim.js"></script>
 </html>
