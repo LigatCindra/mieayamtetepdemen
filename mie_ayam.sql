@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2023 at 05:16 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 16, 2023 at 03:18 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,28 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `details` varchar(50) NOT NULL,
+  `url` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `details`, `url`) VALUES
+(6, 'Banner Mie Ayam Tetep Demen', 'storage/uploads/IMG_04281.png'),
+(7, 'Gerobak depan', 'storage/uploads/IMG_04285.png'),
+(8, 'Logo', 'storage/uploads/logo.png'),
+(12, 'Whatsapp', 'storage/uploads/wa3.png');
 
 -- --------------------------------------------------------
 
@@ -76,7 +98,9 @@ CREATE TABLE `makanan` (
 --
 
 INSERT INTO `makanan` (`id`, `id_kategori`, `nama_makanan`, `deskripsi`, `harga`, `url_gambar`) VALUES
-(4, 7, 'Sprite', 'Minum Segar', 7000, 'uploads/6O2dx7haSMgv6A0bbDM3wLjjDwDo2HnThub2G7X7.jpg');
+(4, 7, 'Sprite', 'Minum Segar', 7000, 'uploads/6O2dx7haSMgv6A0bbDM3wLjjDwDo2HnThub2G7X7.jpg'),
+(10, 6, 'Mie Ayam Original', 'Mie ayam paling original.', 15000, 'uploads/yhMjMXvPhxaYl7F7MtaMHgnmPRJ2kNJPsa3hOYfc.png'),
+(11, 6, 'Mie Ayam Pangsit', 'Ada tambahin bagi yang kurang', 18000, 'uploads/agu3MyTJqitWDD6pYuKGOekMqZwDVxOXX02p663N.png');
 
 -- --------------------------------------------------------
 
@@ -95,10 +119,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(5, '2014_10_12_000000_create_users_table', 1),
+(6, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(7, '2019_08_19_000000_create_failed_jobs_table', 1),
+(8, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(9, '2023_12_15_134517_create_images_table', 1);
 
 -- --------------------------------------------------------
 
@@ -172,9 +197,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`) VALUES
-(2, 'admin', '$2y$12$nwF5SFVpZY2PceVTIfdG8OjgXPmUn0TGGQT9bt.fiN2kZ9OG0d/9y'),
-(3, 'admin2', '$2y$12$DsJZqTaXCQbLUwHq.pidNe54SSBF/wwwSzF7rwAWatpt21BQbSOki'),
-(4, 'admin3', '$2y$12$FJfV0.QBOlhuSpH9EwrzweDWBL8I9hjW0ITUhhQg71zKeY07z/p6C');
+(1, 'admin', '$2y$12$gclSrU4XcCncy6tzRgL/KuT6YB6gYJmUrFwZXt8eViD89wffeaB/y');
 
 --
 -- Indexes for dumped tables
@@ -186,6 +209,12 @@ INSERT INTO `users` (`id`, `name`, `password`) VALUES
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `kategori`
@@ -235,8 +264,7 @@ ALTER TABLE `personal_access_tokens`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -249,6 +277,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
@@ -258,13 +292,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `makanan`
 --
 ALTER TABLE `makanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -276,7 +310,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Vite;
 </head>
 
 <body>
+    @if ($logo && $logo->id == 8)
     <div class="navbar-menu">
         <div class="navlogo">
-            <img src="{{ asset('storage/uploads/logo.png') }}">
+            <img src="{{ asset($logo->url) }}">
         </div>
         <div class="navtext">
             <p>Mie Ayam <br/> Tetep Demen</p>
@@ -32,6 +33,7 @@ use Illuminate\Support\Facades\Vite;
             </div>
         </nav>
     </div>
+    @endif
     <section class="menuheader">
         <div class="menupage">
             <div class="menutext">MENU</div>
@@ -57,19 +59,22 @@ use Illuminate\Support\Facades\Vite;
     </section>
     </section>
     <section> {{-- pesan menu --}}
+        @if ($wa && $wa->id == 12)
         <div class="pesanan">
             <p>Klik tombol di bawah untuk memesan!</p>
             <div class="pesanbutton">
                 <a href="https://wa.me/+6287749840598/?text=halo%20saya%20adalah%20...%20">
-                    <img src="{{asset('storage/uploads/wa3.png')}}" >
+                    <img src="{{asset($wa->url)}}" >
                 </a>
             </div>
         </div>
+        @endif
     </section>
     <section> {{-- penkaki --}}
+        @if ($logo && $logo->id == 8)
         <div class="footer">
             <div class="footer-content">
-                <img class="logofooter" src="{{ asset('storage/uploads/logo.png') }}" alt="Logo">
+                <img class="logofooter" src="{{ asset($logo->url) }}" alt="Logo">
                 <div class="footer-info">
                     <p>PT Mie Abadi</p>
                     <p>Jl. Kalimantan Cimone Mas Permai 1</p>
@@ -82,6 +87,7 @@ use Illuminate\Support\Facades\Vite;
         <div class="copyright-box">
             <p class="copyright">© 2023 PT Mie Abadi. All rights reserved.</p>
         </div>
+        @endif
     </section>
 </body>
 </html>

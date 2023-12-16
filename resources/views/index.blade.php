@@ -12,9 +12,10 @@
 </head>
 
 <body>
+    @if ($logo && $logo->id == 8)
     <div class="navbar-menu">
         <div class="navlogo">
-            <img src="{{ asset('storage/uploads/logo.png') }}">
+            <img src="{{ asset($logo->url) }}">
         </div>
         <div class="navtext">
             <p>Mie Ayam <br/> Tetep Demen</p>
@@ -25,23 +26,28 @@
             </div>
         </nav>
     </div>
+    @endif
     <section> {{-- header home --}}
+        @if ($banner && $banner->id == 6)
         <div class="homeheader">
-            <img src="{{ asset('storage/uploads/IMG_04281.png') }}">
+            <img src="{{ asset($banner->url) }}">
             <div class="overlay"></div>
             <p>Mie Ayam Tetep Demen</p>
         </div>
+        @endif
     </section>
     <section> {{-- profil home --}}
         <div class="profil">
+            @if ($profil && $profil->id == 7)
             <h2>Profil Kami</h2>
             <div class="imgprofil">
-                <img src="{{ asset('storage/uploads/IMG_04285.png') }}">
+                <img src="{{ asset($profil->url) }}">
             </div>
             <div class="textprofil">
                 <p>Mie ayam kami tidak menggunakan bahan pengawet sama sekali, dan terdapat dua macam bentuk mie!</p>
             </div>
         </div>
+        @endif
     </section>
     <section> {{-- profil menu --}}
         <div class="menuteaser">
@@ -49,11 +55,12 @@
                 <a href="{{url('/menu/makanan')}}">Menu Andalan</a>
             </div>
         </div>
-        
+        @if ($original && $pangsit)
         <div class="menuimages">
-            <img class="mieayam" src="{{ asset('storage/uploads/mie_ayam.png') }}">
-            <img class="pangsit" src="{{ asset('storage/uploads/Pangsit_ayam.png') }}" >
+            <img class="mieayam" src="{{ asset('storage/' . $original->url_gambar) }}">
+            <img class="pangsit" src="{{ asset('storage/' . $pangsit->url_gambar) }}" >
         </div>
+        @endif
         
     </section>
     <section> {{-- pesan menu --}}
@@ -65,9 +72,10 @@
         </div>
     </section>
     <section> {{-- penkaki --}}
+        @if ($logo && $logo->id == 8)
         <div class="footer">
             <div class="footer-content">
-                <img class="logofooter" src="{{ asset('storage/uploads/logo.png') }}" alt="Logo">
+                <img class="logofooter" src="{{ asset($logo->url) }}" alt="Logo">
                 <div class="footer-info">
                     <p>PT Mie Abadi</p>
                     <p>Jl. Kalimantan Cimone Mas Permai 1</p>
@@ -80,6 +88,7 @@
         <div class="copyright-box">
             <p class="copyright">© 2023 PT Mie Abadi. All rights reserved.</p>
         </div>
+        @endif
     </section>
 </body>
 

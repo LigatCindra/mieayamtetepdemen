@@ -15,7 +15,24 @@ class ImagesTableSeeder extends Seeder
     {
         DB::table('images')->insert([
             'details' => 'Banner Mie Ayam Tetep Demen',
-            'url' => file_get_contents('uploads/IMG_04281.PNG')
+            'url' => 'storage/uploads/IMG_04281.png'
         ]);
+
+        DB::table('images')->insert([
+            'details' => 'Gerobak depan',
+            'url' => 'storage/uploads/IMG_04285.png'
+        ]);
+
+        DB::table('images')->insert([
+            'details' => 'Logo',
+            'url' => 'storage/uploads/logo.png'
+        ]);
+
+        DB::table('images')->insert([
+            'details' => 'Whatsapp',
+            'url' => 'storage/uploads/wa3.png'
+        ]);
+
+
     }
 }

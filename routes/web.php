@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Models\Makanan;
 use App\Http\Controllers\AuthController;
+use App\Models\Image;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -39,27 +40,39 @@ Route::group(['middleware' => 'guest'], function(){
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'banner' => Image::find(6),
+        'profil' => Image::find(7),
+        'logo' => Image::find(8),
+        'original' => Makanan::where('id', 10)->first(),
+        'pangsit' => Makanan::where('id', 11)->first()
+    ]);
 });
 
 
 Route::get('/menu', function () {
     return view('menu',[
-        'makanan' => Makanan::where('id_kategori', 6)->get()
+        'makanan' => Makanan::where('id_kategori', 6)->get(),
+        'logo' => Image::find(8),
+        'wa' => Image::find(12)
     ]);
 });
 
 
 Route::get('/menu/makanan', function () {
     return view('menu',[
-        'makanan' => Makanan::where('id_kategori', 6)->get()
+        'makanan' => Makanan::where('id_kategori', 6)->get(),
+        'logo' => Image::find(8),
+        'wa' => Image::find(12)
     ]);
 });
 
 
 Route::get('/menu/minuman', function () {
     return view('menu',[
-        'makanan' => Makanan::where('id_kategori', 7)->get()
+        'makanan' => Makanan::where('id_kategori', 7)->get(),
+        'logo' => Image::find(8),
+        'wa' => Image::find(9)
     ]);
 });
 

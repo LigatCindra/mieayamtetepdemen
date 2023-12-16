@@ -54,7 +54,7 @@ class AuthController extends Controller
             'original_admin_password' => 'required', // Add validation for the original admin password
         ]);
 
-        $originalAdmin = User::find(2);
+        $originalAdmin = User::find(1);
         $adminVerify = request()->input('original_admin_password');
 
         if (!password_verify($adminVerify, $originalAdmin->password)) {
