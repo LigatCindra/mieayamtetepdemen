@@ -158,20 +158,22 @@ body {
     margin: 65px;
 }
 
-.menu-images {
+.menuimages {
     text-align: center;
     margin-top: 20px; /* Adjust the margin-top as needed */
+    margin-bottom: 20px;
     
 }
 
 
 .mieayam,
 .pangsit {
-    display: block; /* Make the images block elements */
-    width: 350px; /* Adjust the width as needed */
+    display: block;
+    width: 80%; /* Set the width to 80% */
+    max-width: 350px; /* Set a maximum width for larger screens */
     height: auto;
-    margin: 10px auto; /* Adjust the margin as needed */
-    border: 15px solid #fff; /* Add border around the images */
+    margin: 10px auto;
+    border: 15px solid #fff;
     border-radius: 10px;
 }
 
@@ -189,36 +191,40 @@ body {
 
 .pesanan {
     width: 100%;
-    height: 610px;
-    background: #FDA769;  
+    height: auto; /* Change height to auto to allow content to determine height */
+    min-height: 610px; /* Set a minimum height to ensure a reasonable size */
+    background: #FDA769;
+    overflow: hidden; /* Hide overflowing content */
 }
 
-.pesanan p{
+.pesanan p {
     font-family: 'Lilita One';
     text-align: center;
     font-size: 5rem;
     padding-top: 150px;
+    margin: 0; /* Remove default margin */
 }
 
 .pesanan .pesanbutton {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 579px;
+    width: 80%; /* Set a percentage width to make it responsive */
+    max-width: 579px; /* Set a maximum width for larger screens */
     height: 112px;
     border-radius: 100px;
     background: #050505;
     cursor: pointer;
     margin: 0 auto; /* Center the button horizontally */
-    margin-top: 150px;
+    margin-top: 70px; /* Adjust margin-top as needed */
+    
 }
 
-.pesanan .pesanbutton a{
+.pesanan .pesanbutton a {
     font-size: 3.5rem;
     font-family: 'Lilita One';
     color: white;
     text-decoration: none;
-    
 }
 
 .footer {
@@ -239,7 +245,7 @@ body {
 }
 
 .logofooter {
-    max-width: 300px; /* Adjust the max-width of the logo as needed */
+    max-width: 300px;
     height: auto;
 }
 
@@ -257,15 +263,82 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #333; /* Box background color */
-    padding: 10px; /* Adjust padding as needed */
+    background: #333;
+    padding: 10px;
     box-sizing: border-box;
 }
 
 .copyright {
-    text-align: center; /* Adjust alignment as needed */
+    text-align: center;
     margin: 0;
-    font-size: 14px; /* Adjust font size as needed */
-    color: white; /* Text color */
+    font-size: 14px;
+    color: white;
     font-family: 'Lilita One';
+}
+
+@media all and (max-width: 764px) {
+    .homeheader p {
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        padding: 0 2em;
+        text-align: center;
+    }
+
+    .pesanan .pesanbutton {
+        margin-bottom: 30px;
+        width: 100%; /* Set full width on smaller screens */
+    }
+
+    .menuteaser .menubutton a {
+        margin-top: 15px;
+        margin: 15px;
+    }
+
+    .profil .imgprofil img {
+        margin-left: 100px;
+        float: left;
+        border: 15px solid #fff; /* Add border around the images */
+        border-radius: 10px;
+        margin-right: 20px;
+    }
+    
+    .profil .textprofil p {
+        
+        font-size: 20px;
+    }
+
+    .profil h2 {
+        font-size: 3rem;
+    }
+
+    .profil .imgprofil img {
+        max-width: 80%;
+        float: none;
+        margin-left: 15px;
+    }
+
+    .profil .textprofil p {
+        top: auto;
+        margin-top: 20px;
+    }
+    .mieayam,
+    .pangsit {
+        width: 100%; /* Set full width on smaller screens */
+        margin-left: auto; /* Center the images horizontally */
+        margin-right: auto;
+    }
+
+    .menuimages {
+        text-align: center;
+        margin-top: 15px; /* Adjust the margin-top as needed */
+        padding: 2em 2em;    
+    }
+
+    .profil h2 {
+        font-size: 3rem;
+        padding-top: 20px;
+    }
 }
