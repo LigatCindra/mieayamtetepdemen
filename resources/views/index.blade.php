@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="{{ asset('css/infes.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar:wght@400&display=swap">
@@ -29,7 +30,8 @@
     @endif
     <section> {{-- header home --}}
         @if ($banner && $banner->id == 6)
-        <div class="homeheader">
+        <div class="homeheader" data-aos="fade-down"
+        data-aos-duration="2000">
             <img src="{{ asset($banner->url) }}">
             <div class="overlay"></div>
             <p>Mie Ayam Tetep Demen</p>
@@ -91,5 +93,8 @@
         @endif
     </section>
 </body>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </html>
