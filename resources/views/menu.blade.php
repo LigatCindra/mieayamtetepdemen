@@ -44,7 +44,7 @@ use Illuminate\Support\Facades\Vite;
     </section>
     <section class="menucontent">
         @foreach ($makanan as $makan)
-            <div class="boxmenu">
+            <div class="boxmenu" data-aos="flip-up" data-aos-duration="1500">
                 <div class="imagehere">
                     <img src="{{ asset('storage/' . $makan->url_gambar) }}">
                 </div>
