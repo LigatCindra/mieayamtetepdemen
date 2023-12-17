@@ -33,9 +33,9 @@ use Illuminate\Support\Facades\Vite;
         </nav>
     </div>
     @endif
-    <section class="menuheader" data-aos="zoom-in" data-aos-duration="1500">
+    <section class="menuheader">
         <div class="menupage">
-            <div class="menutext">MENU</div>
+            <div class="menutext" data-aos="zoom-in" data-aos-duration="1500">MENU</div>
             <div class="kategori">
                 <a href="{{ url('/menu/makanan') }}">Makanan</a>
                 <a href="{{ url('/menu/minuman') }}">Minuman</a>
