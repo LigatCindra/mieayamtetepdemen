@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Vite;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=RocknRoll+One:wght@400&display=swap" />
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -34,7 +33,7 @@ use Illuminate\Support\Facades\Vite;
         </nav>
     </div>
     @endif
-    <section class="menuheader">
+    <section class="menuheader" data-aos="zoom-in" data-aos-duration="1500">
         <div class="menupage">
             <div class="menutext">MENU</div>
             <div class="kategori">
@@ -45,7 +44,13 @@ use Illuminate\Support\Facades\Vite;
     </section>
     <section class="menucontent">
         @foreach ($makanan as $makan)
-            <div class="boxmenu">
+<<<<<<< HEAD
+            <div class="boxmenu" data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+=======
+            <div class="boxmenu" data-aos="flip-down" data-aos-duration="1500">
+>>>>>>> 29bc94eaf5529b2cc0b0b7c99a9850bfa1523515
                 <div class="imagehere">
                     <img src="{{ asset('storage/' . $makan->url_gambar) }}">
                 </div>
@@ -90,4 +95,8 @@ use Illuminate\Support\Facades\Vite;
         @endif
     </section>
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </html>
