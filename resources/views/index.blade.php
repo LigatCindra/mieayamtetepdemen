@@ -31,9 +31,9 @@
     <section> {{-- header home --}}
         @if ($banner && $banner->id == 6)
         <div class="homeheader" data-aos="fade-down"
-        data-aos-duration="2000">
+        data-aos-duration="1000">
             <img src="{{ asset($banner->url) }}">
-            <div class="overlay"></div>
+            <div class="overlay" data-aos="fade-left" data-aos-duration="1000"></div>
             <p>Mie Ayam Tetep Demen</p>
         </div>
         @endif
@@ -41,26 +41,26 @@
     <section> {{-- profil home --}}
         <div class="profil">
             @if ($profil && $profil->id == 7)
-            <h2>Profil Kami</h2>
-            <div class="imgprofil">
+            <h2 data-aos="fade-down" data-aos-duration="1000">Profil Kami</h2>
+            <div class="imgprofil" data-aos="fade-right" data-aos-duration="1500">
                 <img src="{{ asset($profil->url) }}">
             </div>
-            <div class="textprofil">
+            <div class="textprofil" data-aos="fade-left" data-aos-duration="1500">
                 <p>Mie ayam kami tidak menggunakan bahan pengawet sama sekali, dan terdapat dua macam bentuk mie!</p>
             </div>
         </div>
         @endif
     </section>
     <section> {{-- profil menu --}}
-        <div class="menuteaser">
+        <div class="menuteaser" data-aos="zoom-in" data-aos-duration="1500">
             <div class="menubutton" onclick="window.location.href='{{url('/menu/makanan')}}';">
                 <a href="{{url('/menu/makanan')}}">Menu Andalan</a>
             </div>
         </div>
         @if ($original && $pangsit)
         <div class="menuimages">
-            <img class="mieayam" src="{{ asset('storage/' . $original->url_gambar) }}">
-            <img class="pangsit" src="{{ asset('storage/' . $pangsit->url_gambar) }}" >
+            <img class="mieayam" src="{{ asset('storage/' . $original->url_gambar) }}" data-aos="fade-up-right" data-aos-duration="1500">
+            <img class="pangsit" src="{{ asset('storage/' . $pangsit->url_gambar) }}"  data-aos="fade-up-left" data-aos-duration="1500">
         </div>
         @endif
         
@@ -68,7 +68,7 @@
     <section> {{-- pesan menu --}}
         <div class="pesanan">
             <p>Keburu laper? Langsung pesan aja!</p>
-            <div class="pesanbutton">
+            <div class="pesanbutton" data-aos="flip-left" data-aos-duration="1500">
                 <a href="{{url('/menu/makanan')}}">Pesan Di Sini!</a>
             </div>
         </div>

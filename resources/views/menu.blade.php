@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Vite;
         </nav>
     </div>
     @endif
-    <section class="menuheader">
+    <section class="menuheader" data-aos="zoom-in" data-aos-duration="1500">
         <div class="menupage">
             <div class="menutext">MENU</div>
             <div class="kategori">
@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Vite;
     </section>
     <section class="menucontent">
         @foreach ($makanan as $makan)
-            <div class="boxmenu">
+            <div class="boxmenu" data-aos="flip-down" data-aos-duration="1500">
                 <div class="imagehere">
                     <img src="{{ asset('storage/' . $makan->url_gambar) }}">
                 </div>
