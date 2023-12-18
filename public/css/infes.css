@@ -137,7 +137,7 @@ body {
 .menuteaser .menubutton{
     width: 647px;
     height: 176px;
-    border-radius: 100px;
+    
     background: #FDA769;
     cursor: pointer;
 }
