@@ -62,7 +62,7 @@ use Illuminate\Support\Facades\Vite;
         <div class="pesanan">
             <p>Klik tombol di bawah untuk memesan!</p>
             <div class="pesanbutton">
-                <a href="https://wa.me/+6287749840598/?text=halo%20saya%20adalah%20...%20">
+                <a href="https://wa.me/+6287749840598/?text=halo%20saya%20ingin%20memesan%20...%20dengan%20alamat%20saya%20...%20">
                     <img src="{{asset($wa->url)}}" >
                 </a>
             </div>
