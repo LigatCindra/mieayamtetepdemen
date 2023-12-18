@@ -334,7 +334,8 @@ body {
     .menuimages {
         text-align: center;
         margin-top: 15px; /* Adjust the margin-top as needed */
-        padding: 2em 2em;    
+        padding-left: 1em;
+        padding-right: 3em;   
     }
 
     .profil h2 {

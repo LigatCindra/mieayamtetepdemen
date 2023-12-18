@@ -95,7 +95,7 @@ body {
   background-color: lightgray;
   overflow: hidden;
   align-items: center;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .menucontent .boxmenu .imagehere img {
@@ -109,9 +109,9 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin: 100px;
-  margin-left: 375px;
+  margin: auto;
   float: right;
+  font-family: 'Lilita One';
 }
 
 .menucontent .boxmenu .description h2 {
@@ -143,7 +143,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 420px;
+  width: 80%;
+  max-width: 420px;
   height: 170px;
   border-radius: 100px;
   background: #050505;
@@ -212,4 +213,64 @@ body {
   font-size: 14px; /* Adjust font size as needed */
   color: white; /* Text color */
   font-family: 'Lilita One';
+}
+
+@media all and (max-width: 764px) {
+  
+  .footer-content {
+    flex-direction: column;
+    padding: 0 2em;
+    text-align: center;
+  }
+
+  .pesanan {
+    height: auto; /* Adjust height to auto for smaller screens */
+    padding-bottom: 20px;
+  }
+
+  .pesanan .pesanbutton {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .pesanan .pesanbutton img {
+    max-width: 85%; /* Make sure the image is responsive */
+    width: 100%; /* Ensure the image takes the full width of the container */
+    margin-left: 35px; /* Adjust margin as needed */
+  }
+
+  .pesanan p {
+    padding-top: 50px; /* Adjust padding-top for text in smaller screens */
+    font-size: 3rem; /* Adjust font size for text in smaller screens */
+  }
+
+  .pesanan .pesanbutton a {
+    font-size: 2.5rem; /* Adjust font size for button text in smaller screens */
+  }
+
+  .menucontent .boxmenu {
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .menucontent .boxmenu .description {
+    float: none;
+    margin: 0;
+  }
+  
+  .menucontent .boxmenu .description h2 {
+    margin-bottom: 0;
+  }
+
+  .kategori a{
+    font-size: 2.5rem;
+  }
+
+  .menupage .menutext{
+    padding-top: 80px;
+  }
+
+  
 }
