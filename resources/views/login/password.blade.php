@@ -55,6 +55,11 @@
                                 <button class="btn btn-primary">Change Password</button>
                             </div>
                         </div>
+                        <div class="mt-3">
+                            <div class="d-grid">
+                                <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="/login">Back to Login</a></p>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
