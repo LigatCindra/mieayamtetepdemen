@@ -28,6 +28,37 @@
     <style>
         body {
             background-color: #FFDAB9;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .buttoncontainer {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+        }
+
+        .table {
+            margin-top: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .col-sm-12 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
