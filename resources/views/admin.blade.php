@@ -66,7 +66,14 @@
 <body class="antialiased">
     <style>
         body {
+            background-color: rgb(220, 220, 220);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .container-fluid {
+            background-color: #f1c27b;
+;
+            padding: 50px;
+            border-radius: 100px;
         }
     </style>
     <div class="container-fluid">
