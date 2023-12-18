@@ -68,65 +68,68 @@
 
             <div class="col-sm-12 col-md-6">
                 <div class="container mt-3">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nama Makanan</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Kategori</th>
-                                <th scope="col">Deskripsi</th>
-                                <th scope="col">Gambar</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($makanan as $row)
+                    <div class="table-responsive-md">
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <td>{{ $row->nama_makanan }}</td>
-                                    <td>{{ $row->harga }}</td>
-                                    <td>{{ $row->kategori->nama_kategori }}</td>
-                                    <td>{{ $row->deskripsi }}</td>
-                                    <td><img class="img-fluid" src="{{ asset('storage/' . $row->url_gambar) }}"
-                                            alt="{{ $row->nama_makanan }}"></td>
-                                    <td>
-                                        <form method="POST" action="{{ route('makanan.edit', $row->id) }}"
-                                            enctype="multipart/form-data">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="form-group">
-                                                <label for="nama_makanan">Nama Makanan:</label>
-                                                <input type="text" name="nama_makanan"
-                                                    value="{{ $row->nama_makanan }}" class="form-control" required>
-                                                <label for="id_kategori">Kategori Makanan:</label>
-                                                <select name="id_kategori" class="form-control">
-                                                    @foreach ($categories as $category)
-                                                        <option value="{{ $category->id_kategori }}">
-                                                            {{ $category->nama_kategori }}</option>
-                                                    @endforeach
-                                                </select>
-                                                <label for="deskripsi">Deskripsi Makanan:</label>
-                                                <input type="text" name="deskripsi" value="{{ $row->deskripsi }}"
-                                                    class="form-control" required>
-                                                <label for="harga">Harga Makanan:</label>
-                                                <input type="number" name="harga" value="{{ $row->harga }}"
-                                                    class="form-control" required>
-                                                <input type="file" name="url_gambar" accept="image/png, image/jpeg"
-                                                    class="form-control-file mt-3">
-                                                <button type="submit" class="btn btn-primary mt-3">Edit
-                                                    Makanan</button>
-                                            </div>
-                                        </form>
-                                        <form style="margin-left:5px;" method="POST"
-                                            action="{{ route('makanan.destroy', $row->id) }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="delete" class="btn btn-danger mt-3">Delete Makanan</button>
-                                        </form>
-                                    </td>
+                                    <th scope="col">Nama Makanan</th>
+                                    <th scope="col">Harga</th>
+                                    <th scope="col">Kategori</th>
+                                    <th scope="col">Deskripsi</th>
+                                    <th scope="col">Gambar</th>
+                                    <th scope="col">Action</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($makanan as $row)
+                                    <tr>
+                                        <td>{{ $row->nama_makanan }}</td>
+                                        <td>{{ $row->harga }}</td>
+                                        <td>{{ $row->kategori->nama_kategori }}</td>
+                                        <td>{{ $row->deskripsi }}</td>
+                                        <td><img class="img-fluid" src="{{ asset('storage/' . $row->url_gambar) }}"
+                                                alt="{{ $row->nama_makanan }}"></td>
+                                        <td>
+                                            <form method="POST" action="{{ route('makanan.edit', $row->id) }}"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="form-group">
+                                                    <label for="nama_makanan">Nama Makanan:</label>
+                                                    <input type="text" name="nama_makanan"
+                                                        value="{{ $row->nama_makanan }}" class="form-control" required>
+                                                    <label for="id_kategori">Kategori Makanan:</label>
+                                                    <select name="id_kategori" class="form-control">
+                                                        @foreach ($categories as $category)
+                                                            <option value="{{ $category->id_kategori }}">
+                                                                {{ $category->nama_kategori }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <label for="deskripsi">Deskripsi Makanan:</label>
+                                                    <input type="text" name="deskripsi"
+                                                        value="{{ $row->deskripsi }}" class="form-control" required>
+                                                    <label for="harga">Harga Makanan:</label>
+                                                    <input type="number" name="harga" value="{{ $row->harga }}"
+                                                        class="form-control" required>
+                                                    <input type="file" name="url_gambar"
+                                                        accept="image/png, image/jpeg" class="form-control-file mt-3">
+                                                    <button type="submit" class="btn btn-primary mt-3">Edit
+                                                        Makanan</button>
+                                                </div>
+                                            </form>
+                                            <form style="margin-left:5px;" method="POST"
+                                                action="{{ route('makanan.destroy', $row->id) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="delete" class="btn btn-danger mt-3">Delete
+                                                    Makanan</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
