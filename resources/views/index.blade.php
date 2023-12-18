@@ -53,8 +53,8 @@
     </section>
     <section> {{-- profil menu --}}
         <div class="menuteaser" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="menubutton" onclick="window.location.href='{{url('/menu/makanan')}}';">
-                <a href="{{url('/menu/makanan')}}">Menu Andalan</a>
+            <div class="menubutton">
+                <a>Menu Andalan</a>
             </div>
         </div>
         @if ($original && $pangsit)

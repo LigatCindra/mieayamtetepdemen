@@ -94,18 +94,11 @@ body {
     font-family: 'Inter';
 }
 
-.menuteaser .menubutton{
+.menuteaser .menubutton {
     max-width: 647px;
-    min-height: 176px;
-    border-radius: 100px;
+    min-height: 189px;
     background: #FDA769;
-    cursor: pointer;
-}
-
-.menuteaser {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 20px solid #FDA769;
 }
 
 .menuteaser .menubutton a {
@@ -114,9 +107,11 @@ body {
     font-family: 'Lilita One';
     color: black;
     text-decoration: none;
-    display: block; /* Add this property to make the text centered */
-    margin: 65px;
+    display: block;
+    margin: 0;
+    padding: 20px;
 }
+
 
 .menu-images {
     text-align: center;
