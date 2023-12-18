@@ -39,6 +39,28 @@ Route::group(['middleware' => 'guest'], function(){
 });
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
+
+
+
+Route::get('/login', function () {
+    return view('login/login', [
+        'logo' => Image::find(8)
+    ]);
+});
+
+Route::get('/register', function () {
+    return view('login/register', [
+        'logo' => Image::find(8)
+    ]);
+});
+
+Route::get('/forgotpassword', function () {
+    return view('login/password', [
+        'logo' => Image::find(8)
+    ]);
+});
+
+
 Route::get('/', function () {
     return view('index', [
         'banner' => Image::find(6),

@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    @if ($logo)
+    <link rel="icon" href="{{ asset($logo->url) }}" type="image/ico">
+    @endif
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="buttoncontainer ms-3 mt-3 mb-3 me-3">
         <form action="/logout" method="post" class="m-6">

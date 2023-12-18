@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    @if ($logo && $logo->id == 8)
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar:wght@400&display=swap">
+    <link rel="icon" href="{{ asset($logo->url) }}" type="image/ico">
     <title>Mie Ayam Tetep Demen</title>
 </head>
 
 <body>
-    @if ($logo && $logo->id == 8)
+    
     <div class="navbar-menu">
         <div class="navlogo">
             <img src="{{ asset($logo->url) }}">

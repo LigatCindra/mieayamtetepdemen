@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use App\Models\Makanan;
+use App\Models\Image;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class Controller extends BaseController
     {
         $categories = Kategori::all();
         $makanan = Makanan::all();
-        return view('admin', compact('categories', 'makanan'));
+        $logo = Image::find(8);
+        return view('admin', compact('categories', 'makanan', 'logo'));
     }
 
     // public function store(Request $request)
